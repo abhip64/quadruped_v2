@@ -1,6 +1,6 @@
 ## Quadruped_v2
 
-sjdfnosn
+This projects aims to develop a 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMzk1OTYyMzFdfQ==
+eyJoaXN0b3J5IjpbLTE2NjQ3OTQxODddfQ==
 -->
