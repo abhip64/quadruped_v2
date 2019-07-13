@@ -6,7 +6,7 @@
 #value definition to simulate dynamics. So the gazebo pid parameters
 #are defined separately. Please check the below link for more info:
 #http://answers.gazebosim.org/question/5468/gazebo_ros_pkgs-no-p-gain-specified-for-pid-in-positionjointinterface/
-#The above file is loaded into the parameter server via the launch file.
+#This file is loaded into the parameter server via the launch file.
 #--------------------------------------------------------------------------------------------------------------------
 
 #--------------------------------------------------------------------------------------------------------------------
