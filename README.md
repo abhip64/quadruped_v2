@@ -14,11 +14,11 @@ The project has been developed  on an Intel i5 dual core laptop running Ubuntu 1
  - ROS Kinetic
  - Gazebo 9.5
 
-> Kindly note that the code has not been tested and validated for any other versions of the above mentioned software.  
+> Kindly note that the code has not been tested and validated for any other versions of the above mentioned software.  Different Gazebo versions may not create problems but a different ROS
 
 ## Current Status of the Project
 The project is under active development. 
 Currently 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQzNzI0ODc4LDIwMjcxMTYzNTFdfQ==
+eyJoaXN0b3J5IjpbLTU3ODczNjIzMywyMDI3MTE2MzUxXX0=
 -->
