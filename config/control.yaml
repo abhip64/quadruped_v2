@@ -1,0 +1,83 @@
+
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+  # Position Controllers ---------------------------------------
+joint1_lf_controller:
+  type: position_controllers/JointPositionController
+  joint: joint1_lf
+  pid: {p: 400.0, i: 0.0, d: 1.0, i_clamp: 00}
+
+joint2_lf_controller:
+  type: position_controllers/JointPositionController
+  joint: joint2_lf
+  pid: {p: 400.0, i: 0.0, d: 1.0, i_clamp: 00}
+
+joint3_lf_controller:
+  type: position_controllers/JointPositionController
+  joint: joint3_lf
+  pid: {p: 400.0, i: 0.0, d: 1.0, i_clamp: 00}
+
+joint1_lr_controller:
+  type: position_controllers/JointPositionController
+  joint: joint1_lr
+  pid: {p: 400.0, i: 0.0, d: 1.0, i_clamp: 00}
+
+joint2_lr_controller:
+  type: position_controllers/JointPositionController
+  joint: joint2_lr
+  pid: {p: 400.0, i: 0.0, d: 1.0, i_clamp: 00}
+
+joint3_lr_controller:
+  type: position_controllers/JointPositionController
+  joint: joint3_lr
+  pid: {p: 400.0, i: 0.0, d: 1.0, i_clamp: 00}
+
+joint1_rf_controller:
+  type: position_controllers/JointPositionController
+  joint: joint1_rf
+  pid: {p: 400.0, i: 0.0, d: 1.0, i_clamp: 00}
+
+joint2_rf_controller:
+  type: position_controllers/JointPositionController
+  joint: joint2_rf
+  pid: {p: 400.0, i: 0.0, d: 1.0, i_clamp: 00}
+
+joint3_rf_controller:
+  type: position_controllers/JointPositionController
+  joint: joint3_rf
+  pid: {p: 400.0, i: 0.0, d: 1.0, i_clamp: 00}
+
+joint1_rr_controller:
+  type: position_controllers/JointPositionController
+  joint: joint1_rr
+  pid: {p: 400.0, i: 0.0, d: 1.0, i_clamp: 00}
+
+joint2_rr_controller:
+  type: position_controllers/JointPositionController
+  joint: joint2_rr
+  pid: {p: 400.0, i: 0.0, d: 1.0, i_clamp: 00}
+
+joint3_rr_controller:
+  type: position_controllers/JointPositionController
+  joint: joint3_rr
+  pid: {p: 400.0, i: 0.0, d: 1.0, i_clamp: 00}
+
+#http://answers.gazebosim.org/question/5468/gazebo_ros_pkgs-no-p-gain-specified-for-pid-in-positionjointinterface/
+
+#DONT EXCEED d above 2.5
+
+gazebo_ros_control/pid_gains:
+  joint1_lf: {p: 400.0, i: 30.0, d: 1.0}
+  joint2_lf: {p: 400.0, i: 30.0, d: 1.0}
+  joint3_lf: {p: 400.0, i: 30.0, d: 1.0}
+  joint1_lr: {p: 400.0, i: 30.0, d: 1.0}
+  joint2_lr: {p: 400.0, i: 30.0, d: 1.0}
+  joint3_lr: {p: 400.0, i: 30.0, d: 1.0}
+  joint1_rf: {p: 400.0, i: 30.0, d: 1.0}
+  joint2_rf: {p: 400.0, i: 30.0, d: 1.0}
+  joint3_rf: {p: 400.0, i: 30.0, d: 1.0}
+  joint1_rr: {p: 400.0, i: 30.0, d: 1.0}
+  joint2_rr: {p: 400.0, i: 30.0, d: 1.0}
+  joint3_rr: {p: 400.0, i: 30.0, d: 1.0}
