@@ -22,8 +22,12 @@ The simulated quadruped is able to follow a specified 2D path using a crab-turni
 
 ## Future Improvements
  For achieving the complex task of wall climbing the quadruped must be equipped with the capability to traverse a 3D environment. Thus it is necessary to develop 3D gaits enabling the legged robot to climb on a general 3D surface and also carry out plane change manoeuvres. There are also plans to  extend the system to hexapods which offer a more stable and flexible platform compared to quadruped but with the added complexity of controlling 6 legs instead of 4.
+ Update in the codes required :
  
+
+ - Remove the need for param.yaml to update the
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg0NjM1NDE2MiwtMTkzMzg2ODk3MiwxMz
-M2NjgwMzc2LDIwMjcxMTYzNTFdfQ==
+eyJoaXN0b3J5IjpbNDI3NTkxNDg0LC0xOTMzODY4OTcyLDEzMz
+Y2ODAzNzYsMjAyNzExNjM1MV19
 -->
