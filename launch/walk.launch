@@ -1,0 +1,68 @@
+<launch>
+
+  <!-- FOR LAUNCHING GAZEBO SIMULATOR-->
+
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+
+  <!--To specify the position and orientation of the quadruped in which it
+  is to be spawned in the simulation environment. Choosing a large z
+  value can cause instabilities in the simulation-->
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="1"/>
+  <arg name="roll" default="0.0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw" default="0"/>
+
+  <!--The following file specified by the path can be used to set up the
+  simulation environment. Important parameters related to the
+  physics engine can be set in this file. More info can be obtained
+  from the file-->
+  <include file="$(find Quadruped_v2)/launch/empty_world.launch">
+    <!--Physics engine can be set to either of
+    ode, bullet, dart, simbody
+    Selection of physics engine is only possible if
+    GAZEBO is built from source-->
+    <arg name="physics" value="dart" />
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+  <!-- //////////////////////////////////////////////////////////////////-->
+
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find quad2)/urdf/quad2.xacro'" />
+
+  <!--Spawning the urdf model into the gazebo environment-->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -model quad2 -param robot_description  -x $(arg x) -y $(arg y) -z $(arg z)
+    -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
+
+    <!--node name = "joint_state_publisher" pkg = "joint_state_publisher" type="joint_state_publisher"/>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+  </node-->
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find Quadruped_v2)/config/control.yaml" command="load"/>
+  <!-- Load body dimensions from YAML file to parameter server -->
+  <rosparam file="$(find Quadruped_v2)/config/param.yaml" command="load"/>
+
+  <!--Spawn all the controllers-->
+  <node name="quad2_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" args="joint1_lf_controller joint2_lf_controller joint3_lf_controller
+    joint1_lr_controller joint2_lr_controller joint3_lr_controller
+    joint1_rf_controller joint2_rf_controller joint3_rf_controller
+    joint1_rr_controller joint2_rr_controller joint3_rr_controller joint_state_controller"/>
+
+  <!--Starting the node which runs the path tracking algorithm-->
+  <node name="walk" pkg="Quadruped_v2" type="walk" respawn="false"
+   output="screen" />
+
+</launch>
