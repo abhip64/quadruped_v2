@@ -12,13 +12,13 @@ This github document is also meant as a detailed guide for anyone who wants to d
 The project has been developed  on an Intel i5 dual core laptop running Ubuntu 16.04. The following versions of software were used
 
  - ROS Kinetic
- - Gazebo v9
+ - Gazebo 9.5
 
-> Kindly note that the code has not been tested and validated for any other  
+> Kindly note that the code has not been tested and validated for any other versions of the above mentioned software.  
 
 ## Current Status of the Project
 The project is under active development. 
 Currently 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk3NTIwNTYzNSwyMDI3MTE2MzUxXX0=
+eyJoaXN0b3J5IjpbNzQzNzI0ODc4LDIwMjcxMTYzNTFdfQ==
 -->
