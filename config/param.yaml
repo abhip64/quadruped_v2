@@ -1,10 +1,10 @@
-/**
-  *The link lengths and other important parameters required for execution
-  *of the code are provided in this file. This file is uploaded into
-  *the parameter server via the launch file.
-  *Currently the values are in the file are the actual values scaled
-  *by a factor specified in the URDF(now 2).
-  */
+
+  #The link lengths and other important parameters required for execution
+  #of the code are provided in this file. This file is uploaded into
+  #the parameter server via the launch file.
+  #Currently the values are in the file are the actual values scaled
+  #by a factor specified in the URDF(now 2).
+  
 
 link1_length: 0.088
 
