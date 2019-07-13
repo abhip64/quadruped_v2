@@ -14,11 +14,11 @@ The project has been developed  on an Intel i5 dual core laptop running Ubuntu 1
  - ROS Kinetic
  - Gazebo v9
 
-
+Kindly note that 
 
 ## Current Status of the Project
 The project is under active development. 
 Currently 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAyNzExNjM1MV19
+eyJoaXN0b3J5IjpbLTYzODE0MjE2MywyMDI3MTE2MzUxXX0=
 -->
