@@ -1,0 +1,14 @@
+<launch>
+  <!--In addition to the Gazebo simulator the code can also be run along with V-Rep
+      simulator by using this launch file. This requires running V-Rep as a separate
+      node and with each joint configured to subscribe to the joint_controller
+      command being published to the Gazebo controllers. To establish connection
+      between ROS and V-Rep, V-Rep-Ros-interface has to be set up. The reason for
+      setting up V_Rep is because it is less resource intensive than Gazebo. Also
+      it's learning curve is pretty low.-->
+
+  <rosparam file="$(find Quadruped_v2)/config/control_vrep.yaml" command="load"/>
+
+   <node name="walk" pkg="Quadruped_v2" type="walk" respawn="false"
+    output="screen" />
+ </launch>

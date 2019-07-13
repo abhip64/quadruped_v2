@@ -18,10 +18,8 @@
   <arg name="pitch" default="0"/>
   <arg name="yaw" default="0"/>
 
-  <!--The following file specified by the path can be used to set up the
-  simulation environment. Important parameters related to the
-  physics engine can be set in this file. More info can be obtained
-  from the file-->
+  <!--empty_world file calls the sdf file containing the description of the
+      simulation environment and the charateristics of the physics engine-->
   <include file="$(find Quadruped_v2)/launch/empty_world.launch">
     <!--Physics engine can be set to either of
     ode, bullet, dart, simbody
