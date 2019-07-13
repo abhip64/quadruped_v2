@@ -18,7 +18,10 @@ The project has been developed  on an Intel i5 dual core laptop running Ubuntu 1
 ## Current Status of the Project
 **The project is under active development**
 
-The simulated quadruped is able to follow a specified path using a crab-turning gait. The code also has been successfully used to control a quadruped prototype that has been developed in our lab.
+The simulated quadruped is able to follow a specified path using a crab-turning gait.  The code also has been successfully used to control a quadruped prototype that has been developed in our lab.
+
+## Future Improvements
+ 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMzE0NjQ4NTYsMjAyNzExNjM1MV19
+eyJoaXN0b3J5IjpbLTEzMDY0NzA0ODQsMjAyNzExNjM1MV19
 -->
