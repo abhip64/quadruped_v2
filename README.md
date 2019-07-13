@@ -9,7 +9,7 @@ For those who are interested more details on digital twins can be obtained from 
 This github document is also meant as a detailed guide for anyone who wants to dive deep into quadrupedal locomotion strategies using statically stable gaits. Detailed documentation of the code will also be provided so that anyone can clone this repo and modify the code for their own use.
 
 ## Software Pre-Requisites
-The project has been developed on Ubuntu 16.04. Simulations were run on a Intel i5 dual core laptop. The follo
+The project has been developed  on an Intel i5 dual core laptop running Ubuntu 16.04. The following versions of software were used
 
  - ROS Kinetic
  - Gazebo v9
@@ -20,5 +20,5 @@ The project has been developed on Ubuntu 16.04. Simulations were run on a Intel 
 The project is under active development. 
 Currently 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg0OTc4NTQ3XX0=
+eyJoaXN0b3J5IjpbMjAyNzExNjM1MV19
 -->
