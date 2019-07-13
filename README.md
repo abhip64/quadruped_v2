@@ -21,7 +21,7 @@ The project has been developed  on an Intel i5 dual core laptop running Ubuntu 1
 The simulated quadruped is able to follow a specified 2D path using a crab-turning gait.  The code also has been successfully used to control a quadruped prototype that has been developed in our lab.
 
 ## Future Improvements
- For achieving the complex task of wall climbing the quadruped must be equipped with the capability to traverse a 3D environment. Thus it is necessary to develop 3D gaits enabling the legged robot to climb on a general 3D surface and also carry out plane change manoeuvres. There are also plans to  extend the system to hexapods which offer a more stable and flexible platform compared to quadruped with the 
+ For achieving the complex task of wall climbing the quadruped must be equipped with the capability to traverse a 3D environment. Thus it is necessary to develop 3D gaits enabling the legged robot to climb on a general 3D surface and also carry out plane change manoeuvres. There are also plans to  extend the system to hexapods which offer a more stable and flexible platform compared to quadruped but with the added complexity of controlling 6 legs instead of 4.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3NTI4MDYzLDIwMjcxMTYzNTFdfQ==
+eyJoaXN0b3J5IjpbMTMzNjY4MDM3NiwyMDI3MTE2MzUxXX0=
 -->
