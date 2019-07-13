@@ -6,10 +6,10 @@ The project runs in concurrence with an effort to develop a hardware prototype o
 For those who are interested more details on digital twins can be obtained from the link given below:
 
 
- It is also meant as a detailed guide for anyone who wants to dive deep into quadrupedal locomotion strategies using statically stable gaits. Detailed documentation of the code will also be provided so that anyone can clone this repo and modify the code for their own use.
+This github document is also meant as a detailed guide for anyone who wants to dive deep into quadrupedal locomotion strategies using statically stable gaits. Detailed documentation of the code will also be provided so that anyone can clone this repo and modify the code for their own use.
 
 ## Software Pre-Requisites
-The project has been designed on Ubuntu 16.04 on  with the following versions of software - 
+The project has been developed on Ubuntu 16.04. Simulations were run on a Intel i5 dual core laptop. The follo
 
  - ROS Kinetic
  - Gazebo v9
@@ -20,5 +20,5 @@ The project has been designed on Ubuntu 16.04 on  with the following versions of
 The project is under active development. 
 Currently 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzI4NTUzNjA2XX0=
+eyJoaXN0b3J5IjpbLTg0OTc4NTQ3XX0=
 -->
