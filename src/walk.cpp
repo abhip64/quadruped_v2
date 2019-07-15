@@ -11,14 +11,14 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
+#include <boost/date_time.hpp>
+#include <ros/ros.h>
+#include <termios.h>
 #include "leg.h"
 #include "publish.h"
 #include "gait.h"
 #include "body.h"
 #include "path.h"
-#include <boost/date_time.hpp>
-#include <ros/ros.h>
-#include <termios.h>
 
 ///////////////////////////////////////////////////////////////////////////////////////
 /**
@@ -42,7 +42,12 @@ int getch()
 }
 ///////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////
-
+/**
+  * \brief Main function
+  *
+  * Calls all the necessary functions for initialization, path tracking
+  * and body manipulations.
+ */
 int main(int argc,char** argv)
 {
   ros::init(argc, argv, "walk");
@@ -106,7 +111,6 @@ int main(int argc,char** argv)
     char k = c;
     ROS_INFO("");
     crawl_gait.body_manip(c);
-
   }
 
   return 0;
