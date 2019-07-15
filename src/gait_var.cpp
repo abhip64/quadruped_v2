@@ -3,6 +3,7 @@
 float GAIT::Rx = 0;
 float GAIT::Ry = 0;
 float GAIT::Rz = 0;
+float GAIT::body_stride = 0;
 float LEG::Rx_max = 0;
 float LEG::Ry_max = 0;
 ////////////////////////////////////////////////////////////////////////////
