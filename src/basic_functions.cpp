@@ -74,21 +74,21 @@ void GAIT::reset_legtip_pos()
 
 void GAIT::store_start_pos()
 {
-leg_lf.leg_nominal_pos[0] = leg_lf.cur_legtip_body_frame[0];
-leg_lf.leg_nominal_pos[1] = leg_lf.cur_legtip_body_frame[1];
-leg_lf.leg_nominal_pos[2] = leg_lf.cur_legtip_body_frame[2];
+leg_lf.leg_start_pos[0] = leg_lf.cur_legtip_body_frame[0];
+leg_lf.leg_start_pos[1] = leg_lf.cur_legtip_body_frame[1];
+leg_lf.leg_start_pos[2] = leg_lf.cur_legtip_body_frame[2];
 
-leg_rf.leg_nominal_pos[0] = leg_rf.cur_legtip_body_frame[0];
-leg_rf.leg_nominal_pos[1] = leg_rf.cur_legtip_body_frame[1];
-leg_rf.leg_nominal_pos[2] = leg_rf.cur_legtip_body_frame[2];
+leg_rf.leg_start_pos[0] = leg_rf.cur_legtip_body_frame[0];
+leg_rf.leg_start_pos[1] = leg_rf.cur_legtip_body_frame[1];
+leg_rf.leg_start_pos[2] = leg_rf.cur_legtip_body_frame[2];
 
-leg_lr.leg_nominal_pos[0] = leg_lr.cur_legtip_body_frame[0];
-leg_lr.leg_nominal_pos[1] = leg_lr.cur_legtip_body_frame[1];
-leg_lr.leg_nominal_pos[2] = leg_lr.cur_legtip_body_frame[2];
+leg_lr.leg_start_pos[0] = leg_lr.cur_legtip_body_frame[0];
+leg_lr.leg_start_pos[1] = leg_lr.cur_legtip_body_frame[1];
+leg_lr.leg_start_pos[2] = leg_lr.cur_legtip_body_frame[2];
 
-leg_rr.leg_nominal_pos[0] = leg_rr.cur_legtip_body_frame[0];
-leg_rr.leg_nominal_pos[1] = leg_rr.cur_legtip_body_frame[1];
-leg_rr.leg_nominal_pos[2] = leg_rr.cur_legtip_body_frame[2];
+leg_rr.leg_start_pos[0] = leg_rr.cur_legtip_body_frame[0];
+leg_rr.leg_start_pos[1] = leg_rr.cur_legtip_body_frame[1];
+leg_rr.leg_start_pos[2] = leg_rr.cur_legtip_body_frame[2];
 
 }
 

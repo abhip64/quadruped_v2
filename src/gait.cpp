@@ -159,9 +159,9 @@ void GAIT::follow_2d_path()
 
             time_exec.push(duration_vector[i]);
 
-            leg_tip_pose_cog << cur_leg.leg_nominal_pos[0],
-                                cur_leg.leg_nominal_pos[1],
-                                cur_leg.leg_nominal_pos[2],
+            leg_tip_pose_cog << cur_leg.leg_start_pos[0],
+                                cur_leg.leg_start_pos[1],
+                                cur_leg.leg_start_pos[2],
                                 1;
 
             leg_tip_pose_cog = T1*T2*leg_tip_pose_cog;
