@@ -194,6 +194,9 @@ public:
                                        leg/body motion has to be completed
                                     */
 
+  static float body_stride;       /**< Distance moved by body in one locomotion
+                                       cycle
+                                    */
 
   GAIT(ros::NodeHandle& node,float x_start_path,float y_start_path)
   {
