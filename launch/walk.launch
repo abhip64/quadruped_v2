@@ -20,7 +20,7 @@
 
   <!--empty_world file calls the sdf file containing the description of the
       simulation environment and the charateristics of the physics engine-->
-  <include file="$(find Quadruped_v2)/launch/empty_world.launch">
+  <include file="$(find quadruped_v2)/launch/empty_world.launch">
     <!--Physics engine can be set to either of
     ode, bullet, dart, simbody
     Selection of physics engine is only possible if
@@ -35,22 +35,17 @@
   <!-- //////////////////////////////////////////////////////////////////-->
 
   <!-- Load the URDF into the ROS Parameter Server -->
-  <param name="robot_description" command="$(find xacro)/xacro.py '$(find quad2)/urdf/quad2.xacro'" />
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find quadruped_v2)/urdf/quad2.xacro'" />
 
   <!--Spawning the urdf model into the gazebo environment-->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
     args="-urdf -model quad2 -param robot_description  -x $(arg x) -y $(arg y) -z $(arg z)
     -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
 
-    <!--node name = "joint_state_publisher" pkg = "joint_state_publisher" type="joint_state_publisher"/>
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
-    respawn="false" output="screen">
-  </node-->
-
   <!-- Load joint controller configurations from YAML file to parameter server -->
-  <rosparam file="$(find Quadruped_v2)/config/control.yaml" command="load"/>
+  <rosparam file="$(find quadruped_v2)/config/control.yaml" command="load"/>
   <!-- Load body dimensions from YAML file to parameter server -->
-  <rosparam file="$(find Quadruped_v2)/config/param.yaml" command="load"/>
+  <rosparam file="$(find quadruped_v2)/config/param.yaml" command="load"/>
 
   <!--Spawn all the controllers-->
   <node name="quad2_spawner" pkg="controller_manager" type="spawner" respawn="false"
@@ -60,7 +55,7 @@
     joint1_rr_controller joint2_rr_controller joint3_rr_controller joint_state_controller"/>
 
   <!--Starting the node which runs the path tracking algorithm-->
-  <node name="walk" pkg="Quadruped_v2" type="walk" respawn="false"
+  <node name="walk" pkg="quadruped_v2" type="walk2" respawn="false"
    output="screen" />
 
 </launch>

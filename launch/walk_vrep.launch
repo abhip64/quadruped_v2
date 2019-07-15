@@ -5,10 +5,11 @@
       command being published to the Gazebo controllers. To establish connection
       between ROS and V-Rep, V-Rep-Ros-interface has to be set up. The reason for
       setting up V_Rep is because it is less resource intensive than Gazebo. Also
-      it's learning curve is pretty low.-->
+      it's learning curve is pretty low.
+      DO NOT USE IT FOR NOW. WILL UPDATE IN FUTURE-->
 
-  <rosparam file="$(find Quadruped_v2)/config/control_vrep.yaml" command="load"/>
+  <rosparam file="$(find quadruped_v2)/config/control_vrep.yaml" command="load"/>
 
-   <node name="walk" pkg="Quadruped_v2" type="walk" respawn="false"
+   <node name="walk" pkg="quadruped_v2" type="walk" respawn="false"
     output="screen" />
  </launch>

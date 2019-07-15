@@ -92,6 +92,12 @@ public:
     */
   void body_manip(int);
 
+  /**
+    *Move the body based to achieve in place manipulations based on
+    *keyboard input
+    */
+  void move_body();
+
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 //AUXILLIARY FUNCTIONS
@@ -111,7 +117,7 @@ public:
   void update_legtip_pos();
 
   /**
-    *Transform the current leg positions stored wrt leg reference
+    *Transform the current leg positions stored wrt workspace 
     *frame to the body frame. Current leg position in body frame
     *are required for stability calculations
     *@param index - Index of the leg for which the transformation is
@@ -121,14 +127,14 @@ public:
 
   /**
     *Transform the next leg positions stored wrt body reference frame
-    *to the leg frame. It is easier to calculate next leg positions in the
-    *body reference frame. Transformation to leg frame is necessary
-    *as the inverse kinematics calculations for determining the joint
-    *angles are easier in the leg frame.
+    *to the workspace frame. It is easier to calculate next leg positions in
+    *the body reference frame. Transformation to workspace frame provides
+    *a more intuituve way to define the leg motions. It is later converted
+    *into the leg frame using another function
     *@param index - Index of the leg for which the transformation is
     *               to be done
     */
-  void transform_to_leg_frame(int);
+  void transform_to_work_frame(int);
 
   /**
     *Update the position that the leg would achieve wrt body frame after

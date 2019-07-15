@@ -62,6 +62,8 @@ int main(int argc,char** argv)
   //it should lie on the path
   float y_start = 0;
 
+  ros::Duration(2).sleep();
+
   //Initialise GAIT class with the node-handle and starting coordinates
   //of the quadruped
   GAIT crawl_gait(node,x_start,y_start);

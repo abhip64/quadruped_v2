@@ -1,5 +1,4 @@
 <launch>
-
   <!-- these are the arguments you can pass this launch file, for example paused:=true -->
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
@@ -17,7 +16,7 @@
   simulation environment. Important parameters related to the
   physics engine can be set in this file. More info can be obtained
   from the file-->
-  <arg name="world_name" default="/home/abhijith/catkin_ws/src/quad2/worlds/empty_world.world"/>
+  <arg name="world_name" default="/home/abhijith/catkin_ws/src/quadruped_v2/worlds/empty_world.world"/>
   <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <!--arg name="world_name" default="worlds/empty_world.world"/--> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
   <arg name="respawn_gazebo" default="false"/>

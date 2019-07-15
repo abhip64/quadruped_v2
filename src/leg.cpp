@@ -15,6 +15,54 @@ void LEG::init_leg(ros::NodeHandle &node)
 
 }
 
+
+float* LEG::convert_to_leg_frame(float *des_end_pos,int &index,float Rx,float Rz)
+{
+
+float x_ = *(des_end_pos);
+float y_ = *(des_end_pos + 1);
+float z_ = *(des_end_pos + 2);
+
+/////////////////////////////////////////////////////////////////////////////
+//IMPORTANT -
+//THE ROTATION MATRICES WHICH HAVE BEEN USED BELOW ARE CALCULATED FOR
+//FRAMES OF REFERENCES WHOSE Z-AXIS POINTS DOWNWARD. SO CW AND CCW
+//ANGLES SEEN FROM TOP ARE INTERCHANGED.
+/////////////////////////////////////////////////////////////////////////////
+
+  switch(index)
+  {
+  case 1:
+  result[0] = ( x_ - y_ + Rx)/pow(2,0.5);
+  result[1] = ( x_ + y_)/pow(2,0.5);
+  result[2] = z_ + Rz;
+  break;
+
+  case 2:
+  result[0] = ( x_ + y_ + Rx)/pow(2,0.5);
+  result[1] = (-x_ + y_)/pow(2,0.5);
+  result[2] = z_ + Rz;
+  break;
+
+  case 3:
+  result[0] = (-x_ - y_ + Rx)/pow(2,0.5);
+  result[1] = ( x_ - y_)/pow(2,0.5);
+  result[2] = z_ + Rz;
+  break;
+
+  case 4:
+  result[0] = (-x_ + y_ + Rx)/pow(2,0.5);
+  result[1] = (-x_ - y_)/pow(2,0.5);
+  result[2] = z_ + Rz;
+  break;
+  default:
+  ROS_FATAL("INVALID LEG INDEX PASSED FOR LEG IK CALCULATION");
+
+}
+
+return result;
+}
+
 float* LEG::ik_calc_leg(float *des_end_pos)
 {
 

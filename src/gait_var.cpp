@@ -4,8 +4,7 @@ float GAIT::Rx = 0;
 float GAIT::Ry = 0;
 float GAIT::Rz = 0;
 float GAIT::body_stride = 0;
-float LEG::Rx_max = 0;
-float LEG::Ry_max = 0;
+
 ////////////////////////////////////////////////////////////////////////////
 /*Initialisation of home joint position of leg joints*/
 float LEG::home_pos[3] = {0, -M_PI/6, M_PI/6};
@@ -39,5 +38,5 @@ int GAIT::column = 4;
 float GAIT::duration_vector[8] = {1,2,1,2,1,2,1,2};
 
 /*Sleep time to ensure simulation catches up with the running code*/
-float GAIT::sleep_time = 0.1;
+float GAIT::sleep_time = 0.001;
 ////////////////////////////////////////////////////////////////////////////

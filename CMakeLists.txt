@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(Quadruped_v2)
+project(quadruped_v2)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -32,11 +32,11 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate services in the 'srv' folder
- add_service_files(
-    FILES
-    Direction.srv
+# add_service_files(
+#    FILES
+#    Direction.srv
 #   Service2.srv
- )
+# )
 
 include_directories(
 # include
@@ -44,18 +44,18 @@ include_directories(
 )
 
 catkin_package( INCLUDE_DIRS src
-	LIBRARIES Quadruped_v2
+	LIBRARIES quadruped_v2
 	CATKIN_DEPENDS pluginlib roscpp message_runtime
   DEPENDS Boost
 )
-add_library(leg_ik  src/leg.cpp src/publish.cpp src/gait.cpp src/body.cpp src/path.cpp src/gait_var.cpp src/basic_functions.cpp src/stability.cpp src/body_manip.cpp)
+add_library(lib_walk  src/leg.cpp src/publish.cpp src/gait.cpp src/body.cpp src/path.cpp src/gait_var.cpp src/basic_functions.cpp src/stability.cpp src/body_manip.cpp)
 
-#add_library(Quadruped_v2_lib src/leg_rr_controller.cpp)
-#target_link_libraries(Quadruped_v2_lib ${catkin_LIBRARIES})
+#add_library(quadruped_v2_lib src/leg_rr_controller.cpp)
+#target_link_libraries(quadruped_v2_lib ${catkin_LIBRARIES})
 
-add_executable(walk src/walk.cpp)
+add_executable(walk2 src/walk.cpp)
 
-add_dependencies(walk Quadruped_v2_generate_messages_cpp)
+add_dependencies(walk2 quadruped_v2_generate_messages_cpp)
 
-target_link_libraries(walk ${catkin_LIBRARIES})
-target_link_libraries(walk leg_ik)
+target_link_libraries(walk2 ${catkin_LIBRARIES})
+target_link_libraries(walk2 lib_walk)

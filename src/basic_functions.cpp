@@ -180,12 +180,18 @@ void GAIT::transform_to_body_frame(int index)
 
 }
 
-void GAIT::transform_to_leg_frame(int index)
+void GAIT::transform_to_work_frame(int index)
 {
   float body_len   = BODY::get_body_len();
   float body_width = BODY::get_body_width();
 
   Eigen::MatrixXd p_vec(4,1);
+
+  float x_disp,y_disp,z_disp;
+
+  x_disp = (body_len   + GAIT::Rx)/2;
+  y_disp = (body_width  + GAIT::Rx)/2;
+  z_disp = GAIT::Rz;
 
   switch(index)
   {

@@ -57,6 +57,18 @@ public:
   int get_leg_substate();
 
   /**
+    *Converts the leg tip position to a coordinate with its x axis along
+    *the leg at its 45 deg position and z axis pointing downward. IK
+    *calcualtions are easier in this frame.
+    *@param des_end_pos - 3D Leg tip position in workspace frame
+    *@param index       - Index of leg for which transformation is to be done
+    *@param Rx          - Workspace dimension along x axis
+    *@param Rz          - Workspace dimension along z axis
+    *@return 3D Leg tip position in leg frame
+   */
+  float* convert_to_leg_frame(float*, int&,float,float);
+
+  /**
     *To carry out leg inverse kinematics given desired leg tip position.
     *Details regarding procedure and formulae for ik will be discussed
     *in the github wiki page.

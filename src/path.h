@@ -49,12 +49,13 @@ bool newton_solution();
 
 /**
   *Determine the next point in the path that the cog of the quadruped
-  *has to move to.
+  *has to move to. Procedure of determining the solution will be explained
+  *in the associated github wiki page.
   *@param xcog - x coordinate of COG
   *@param ycog - y coordinate of COG
   *@param L    - body stride length
-  *@return 0 denotes failure in finding the next body position and 1
-  *        denotes success
+  *@return 0 denotes path completion and 1 denotes one cycle of locomotion
+  *is completed.
  */
 bool calc_next_move(float,float,float);
 
@@ -66,7 +67,8 @@ bool calc_next_move(float,float,float);
 void calc_J_inv(float&,float&);
 
 /**
-  *Set the end point of COG on the path
+  *Set the end point of COG on the path. Differentials are calculated
+  *using central difference method
   *@param x - x coordinate of end point
   *@param y - y coordinate of end point
  */

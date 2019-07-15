@@ -43,11 +43,16 @@ void GAIT::moveto(int index,float q1,float q2,float q3)
 
 void GAIT::goto_home_pos()
 {
+  double begin = ros::Time::now().toSec();
+
+  while(ros::Time::now().toSec()-begin<=1)
   /*Publish joint positions corresponding to home position*/
+{
   publish_pos.publish_leg(LEG::home_pos,1);
   publish_pos.publish_leg(LEG::home_pos,2);
   publish_pos.publish_leg(LEG::home_pos,3);
   publish_pos.publish_leg(LEG::home_pos,4);
+}
 
   /*Set the current position as zero position of the leg tip in leg
     reference frame*/
@@ -170,7 +175,7 @@ void GAIT::follow_2d_path()
             cur_leg.next_legtip_body_frame[1] = leg_tip_pose_cog(1,0);
             cur_leg.next_legtip_body_frame[2] = leg_tip_pose_cog(2,0);
 
-            transform_to_leg_frame(cur_leg_index);
+            transform_to_work_frame(cur_leg_index);
 
           }
           else
@@ -229,7 +234,7 @@ void GAIT::update_leg_for_body_motion(Eigen::Matrix4d &T)
     cur_leg.next_legtip_body_frame[1] = p(1,0);
     cur_leg.next_legtip_body_frame[2] = p(2,0);
 
-    transform_to_leg_frame(leg_index);
+    transform_to_work_frame(leg_index);
 
   }
 
