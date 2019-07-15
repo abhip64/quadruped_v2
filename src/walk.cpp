@@ -1,8 +1,15 @@
-/*! \file Test
-    \brief A test class.
-
-    A more detailed class description.
+/** @file
+* \brief Initiates the primary node "walk"
+*
+* This file initiates the node "walk" which starts the quadruped path
+* tracking algorithm. The path tracking is achieved using periodic
+* crab-turning gait. Once the path is traversed, in-place body manipulations
+* can be carried out using the keyboard(by typing into the terminal).
+* Detailed instructions for carrying out body manipulations can be
+* found in the file @body_manip.cpp
 */
+
+///////////////////////////////////////////////////////////////////////////////////////
 
 #include "leg.h"
 #include "publish.h"
@@ -13,6 +20,12 @@
 #include <ros/ros.h>
 #include <termios.h>
 
+///////////////////////////////////////////////////////////////////////////////////////
+/**
+*Code to take keyboard input from the terminal once the path tracking is completed.\n
+*For more info check out -  \n
+*https://answers.ros.org/question/63491/keyboard-key-pressed/
+*/
 
 int getch()
 {
@@ -27,67 +40,75 @@ int getch()
   tcsetattr( STDIN_FILENO, TCSANOW, &oldt);  // restore old settings
   return c;
 }
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////
 
 int main(int argc,char** argv)
 {
-ros::init(argc, argv, "walk");
+  ros::init(argc, argv, "walk");
 
-ros::NodeHandle node;
+  ros::NodeHandle node;
 
-float x_start = 0;
-float y_start = 0;
+  //Initial x-position of the COG of the quadruped. Note that
+  //it should lie on the path
+  float x_start = 0;
 
+  //Initial y-position of the COG of the quadruped. Note that
+  //it should lie on the path
+  float y_start = 0;
 
-//INTIAL COG POSITION IN THE PATH IS SPECIFIED BY x_start AND y_start
-GAIT crawl_gait(node,x_start,y_start);
-//ros::Duration(2).sleep();
-//crawl_gait.moveto(1,0,-0.1,0);
+  //Initialise GAIT class with the node-handle and starting coordinates
+  //of the quadruped
+  GAIT crawl_gait(node,x_start,y_start);
 
-ros::Subscriber jnt_state = node.subscribe ("/joint_states", 100, update_legpos);
+  ROS_INFO("QUADRUPED INITIATED");
 
+  //Move the quadruped to the home position. Home position of the joints
+  //are defined in @leg.h
+  crawl_gait.goto_home_pos();
 
-ros::Duration(2).sleep();
+  ROS_INFO("QUADRUPED MOVED TO HOME POSITION");
 
+  //Wait for 2 seconds
+  ros::Duration(2).sleep();
 
-ROS_INFO("QUADRUPED INITIATED");
+  //Carry out the leg phasing manouever to start path tracking. Leg phasing
+  //is done to ensure enough stability margin exists before starting locomotion.
+  //It is done when the quadruped is not on ground to ensure it doesnt topple
+  //when the first leg is lifted
+  crawl_gait.leg_phasing();
 
+  ROS_INFO("LEG PHASING MANOUEVER FOR CRAWL GAIT COMPLETED ");
 
-crawl_gait.goto_home_pos();
+  //Wait for 2 seconds
+  ros::Duration(2).sleep();
 
-/*
-ROS_INFO("QUADRUPED MOVED TO START POSITION");
+  ROS_INFO("STARTING PATH FOLLOWING ALGORITHM");
 
+  //End coordinates of the COG of the quadruped that it needs to
+  //achieve on the path
+  set_endpoint(2,0);
 
-ros::Duration(2).sleep();
+  //Starting the path tracking algorithm. Path of the quadruped is
+  //defined in @path.cpp
+  crawl_gait.follow_2d_path();
 
-crawl_gait.leg_phasing();
+  ROS_INFO("SUCCESSFULLY REACHED END OF PATH");
 
-ROS_INFO("LEG PHASING MANOUEVER FOR CRAWL GAIT COMPLETED ");
+  ROS_INFO("LEG MANIPULATION STARTED");
 
-ros::Duration(2).sleep();
-
-ROS_INFO("STARTING PATH FOLLOWING ALGORITHM");
-
-set_endpoint(2,0);
-
-crawl_gait.follow_2d_path();
-
-ROS_INFO("SUCCESSFULLY REACHED END OF PATH");
-
-*/
-ROS_INFO("LEG MANIPULATION STARTED");
-
-while(ros::ok)
-{
-
-
-  int c = getch();
-  char k = c;
-//  ROS_INFO("%d",c);
+  while(ros::ok)
+  {
+  //The code waits until an input from keyboard is received. Once
+  //an input is captured the function is called to achieve the
+  //particular configuration
+    int c = getch();
+    char k = c;
+    ROS_INFO("");
     crawl_gait.body_manip(c);
 
+  }
 
+  return 0;
 }
-
-return 0;
-}
+///////////////////////////////////////////////////////////////////////////////////////
