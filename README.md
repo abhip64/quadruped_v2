@@ -1,4 +1,4 @@
-# Quadruped_v2
+# Quadruped v2.0
 
 This projects aims to develop a simulation environment capable of testing out different static gait strategies of quadruped with insect-like leg configuration.  The project has been carried out using open source platforms - **ROS** and **Gazebo**.
 
@@ -25,10 +25,9 @@ The simulated quadruped is able to follow a specified 2D path using a crab-turni
  
  Update in the codes required :
  
-
  - Remove the need for param.yaml to update the link lengths in parameter server. Rather use **OROCOS** library to update these values using urdf.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI5NDIwNTc3LC0xOTMzODY4OTcyLDEzMz
-Y2ODAzNzYsMjAyNzExNjM1MV19
+eyJoaXN0b3J5IjpbLTM1MDcxNDYxMCwtMjk0MjA1NzcsLTE5Mz
+M4Njg5NzIsMTMzNjY4MDM3NiwyMDI3MTE2MzUxXX0=
 -->
