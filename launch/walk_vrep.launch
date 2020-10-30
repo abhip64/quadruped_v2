@@ -8,8 +8,8 @@
       it's learning curve is pretty low.
       DO NOT USE IT FOR NOW. WILL UPDATE IN FUTURE-->
 
-  <rosparam file="$(find quadruped_v2)/config/control_vrep.yaml" command="load"/>
+  <rosparam file="$(find quadruped_v2)/config/param.yaml" command="load"/>
 
-   <node name="walk" pkg="quadruped_v2" type="walk" respawn="false"
+   <node name="walk" pkg="quadruped_v2" type="walk2" respawn="false"
     output="screen" />
  </launch>
